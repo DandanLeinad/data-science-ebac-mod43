@@ -1,7 +1,7 @@
 [project]
-name = "projeto-final-mod43"
+name = "lol-match-winner-predictor"
 version = "0.1.0"
-description = "Add your description here"
+description = "Projeto de Machine Learning para prever o vencedor de partidas de League of Legends."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
@@ -9,4 +9,5 @@ dependencies = []
 [dependency-groups]
 dev = [
     "ipykernel>=7.3.0",
+    "zensical>=0.0.46",
 ]
