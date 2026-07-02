@@ -83,13 +83,15 @@ Um único split de teste pode enganar — pode ter calhado de ser "fácil" ou "d
   <figcaption>AUC-ROC médio por modelo em 5 folds — a Regressão Logística lidera (0,8107) e tem a distribuição mais estreita entre os 5</figcaption>
 </figure>
 
-| Modelo | AUC-ROC (teste) | AUC-ROC (CV, 5-fold) |
+| Modelo | AUC-ROC (teste) | AUC-ROC (CV, 5-fold, baseline) |
 |---|---|---|
 | **Regressão Logística** | 0,8060 | **0,8107** |
 | Naive Bayes | 0,7980 | 0,8023 |
 | Árvore de Decisão | 0,7888 | 0,7850 |
 | Random Forest | 0,8039 | 0,8013 |
 | Gradient Boosting | 0,8030 | 0,8009 |
+
+*A tabela acima mostra os modelos **baseline (sem tuning)**. Após `GridSearchCV`, a Regressão Logística tunada alcança **0,8117** no CV (ver [Modelo Final](04-resultados.md)).*
 
 A validação cruzada é o número que mais importa aqui — ela é a estimativa mais confiável do desempenho em dados novos. E ela aponta pra um resultado interessante: a **Regressão Logística**, o modelo mais simples do lote, não só empata tecnicamente com os ensembles como tem a **distribuição mais estreita** entre os 5 — ou seja, o desempenho mais consistente entre diferentes fatias dos dados.
 

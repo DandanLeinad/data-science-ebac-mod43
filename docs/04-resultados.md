@@ -45,7 +45,7 @@ A importância por permutação do modelo final confirma isso de forma ainda mai
 
 <figure markdown>
   ![Importância por permutação — Regressão Logística tunada](assets/img/14_permutation_importance_lr.png)
-  <figcaption><code>blueExperienceDiff</code> é responsável por 0,29 de queda no AUC-ROC quando embaralhada — todas as outras, efetivamente zero</figcaption>
+  <figcaption><code>blueExperienceDiff</code> é responsável por 0,291 de queda no AUC-ROC quando embaralhada — todas as outras, efetivamente zero</figcaption>
 </figure>
 
 !!! success "Não é um artefato só da Regressão Logística"
@@ -69,6 +69,6 @@ Testando diferentes limiares nas métricas de precisão, recall, F1-Score e acur
   <figcaption>threshold = 0,32 maximiza o F1-Score — equilíbrio entre não perder vitórias reais e não gerar alarmes falsos demais</figcaption>
 </figure>
 
-O threshold escolhido para uso operacional foi **0,32**, otimizado para F1-Score — prioriza capturar a maioria das vitórias reais do time azul, aceitando uma taxa um pouco maior de falsos positivos em troca. Para outros contextos de uso, dois thresholds alternativos também ficaram documentados: **0,95** (se o objetivo for precisão máxima — só sinalizar quando a confiança for muito alta) e **0,46** (se o objetivo for maximizar acurácia geral).
+O threshold escolhido para uso operacional foi **0,32**, otimizado para F1-Score — prioriza capturar a maioria das vitórias reais do time azul, aceitando uma taxa um pouco maior de falsos positivos em troca. Para outros contextos de uso, dois thresholds alternativos também ficaram documentados: **0,72** (se o objetivo for precisão máxima — só sinalizar quando a confiança for muito alta) e **0,58** (se o objetivo for maximizar acurácia geral).
 
 [:octicons-arrow-right-24: Testar o modelo no simulador](05-simulador.md){ .md-button .md-button--primary }
