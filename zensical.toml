@@ -2,8 +2,8 @@
 site_name = "LoL Win Predictor"
 site_description = "Modelo de classificação para prever o vencedor de partidas ranqueadas de League of Legends aos 10 minutos de jogo — Projeto Final, Módulo 43 (Case 03, Riot Games)."
 site_author = "DandanLeinad"
-site_url = "https://CHANGE-ME.github.io/projeto-final-mod43/"
-repo_url = "https://github.com/CHANGE-ME/projeto-final-mod43"
+site_url = "https://dandanleinad.github.io/data-science-ebac-mod43/"
+repo_url = "https://github.com/dandanleinad/data-science-ebac-mod43"
 repo_name = "GitHub"
 copyright = "Projeto Final — Módulo 43 (Case 03, Riot Games) — Daniel"
 
