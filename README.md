@@ -3,6 +3,7 @@
 Projeto final do Módulo 43 (Case 03) — modelo de classificação binária que prevê o vencedor de uma partida ranqueada de League of Legends a partir do estado do jogo no minuto 10, desenvolvido para a Riot Games.
 
 **📊 Apresentação completa:** <https://dandanleinad.github.io/data-science-ebac-mod43/>
+
 **💻 Simulador interativo no Streamlit:** <https://lol-win-predictor.streamlit.app>
 
 ## O que tem neste repositório
