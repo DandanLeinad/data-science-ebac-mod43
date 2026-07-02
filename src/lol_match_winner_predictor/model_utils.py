@@ -17,9 +17,9 @@ import streamlit as st
 
 # ---------------------------------------------------------------------------
 # Paths — resolvidos a partir deste arquivo, funcionam com qualquer cwd
-# app/ -> lol_match_winner_predictor/ -> src/ -> raiz do projeto
+# lol_match_winner_predictor/ -> src/ -> raiz do projeto
 # ---------------------------------------------------------------------------
-ROOT_DIR = Path(__file__).resolve().parents[3]
+ROOT_DIR = Path(__file__).resolve().parents[2]
 MODELS_DIR = ROOT_DIR / "models"
 DATA_PATH = ROOT_DIR / "data" / "raw" / "Base_M43_Pratique_LOL_RANKED_WIN.csv"
 

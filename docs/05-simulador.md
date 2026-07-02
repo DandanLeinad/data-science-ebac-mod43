@@ -27,7 +27,7 @@ O projeto usa [uv](https://docs.astral.sh/uv/) para gerenciar dependências. A p
 
 ```bash
 uv sync
-uv run python -m lol_match_winner_predictor.main
+uv run streamlit run src/lol_match_winner_predictor/streamlit_app.py
 ```
 
 Isso abre o simulador em `http://localhost:8501`.

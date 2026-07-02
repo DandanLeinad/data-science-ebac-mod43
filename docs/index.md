@@ -9,7 +9,7 @@ description: Modelo de classificação para prever o vencedor de partidas ranque
 
 Projeto final do Módulo 43 (Case 03) — um modelo de classificação binária que prevê o vencedor de uma partida ranqueada de League of Legends a partir do estado do jogo por volta do **minuto 10**, para a Riot Games.
 
-[:octicons-rocket-24: Ver o Simulador](05-simulador.md){ .md-button .md-button--primary }
+[:octicons-rocket-24: Ver o Simulador](https://lol-win-predictor.streamlit.app){ .md-button .md-button--primary }
 [:octicons-mark-github-16: Repositório no GitHub](https://github.com/CHANGE-ME/projeto-final-mod43){ .md-button }
 
 ---

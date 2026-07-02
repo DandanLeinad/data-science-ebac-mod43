@@ -5,7 +5,7 @@ site_author = "DandanLeinad"
 site_url = "https://dandanleinad.github.io/data-science-ebac-mod43/"
 repo_url = "https://github.com/dandanleinad/data-science-ebac-mod43"
 repo_name = "GitHub"
-copyright = "Projeto Final — Módulo 43 (Case 03, Riot Games) — Daniel"
+copyright = "Projeto Final — Módulo 43 (Case 03, Riot Games) — DandanLeinad — 2026"
 
 docs_dir = "docs"
 site_dir = "site"

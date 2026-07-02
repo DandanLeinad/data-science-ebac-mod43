@@ -3,7 +3,7 @@ Simulador de Partida — LoL Win Predictor
 Projeto Final | Módulo 43 | Case 03 — Riot Games (stakeholder: Bárbara Martinelli)
 
 Rodar (a partir da raiz do projeto):
-    uv run streamlit run src/lol_match_winner_predictor/app/streamlit_app.py
+    uv run streamlit run src/lol_match_winner_predictor/streamlit_app.py
 """
 
 import streamlit as st
@@ -270,7 +270,7 @@ st.markdown(
     """
 :small[**Projeto Final — Módulo 43 | Case 03 — Riot Games**  
 Desenvolvido para o desafio da Bárbara Martinelli (Tech Lead, Riot Games)  
-📓 Notebook completo: `lol_match_winner_prediction.ipynb`  
-🐙 GitHub: [github.com/seu-usuario/projeto-final-mod43](https://github.com/seu-usuario/projeto-final-mod43)]
+📓 Notebook completo: [lol_match_winner_prediction.ipynb](https://github.com/DandanLeinad/data-science-ebac-mod43/blob/main/lol_match_winner_prediction.ipynb)
+🐙 GitHub: [https://github.com/DandanLeinad/data-science-ebac-mod43](https://github.com/DandanLeinad/data-science-ebac-mod43)]
 """
 )

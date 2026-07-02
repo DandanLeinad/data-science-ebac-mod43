@@ -2,7 +2,8 @@
 
 Projeto final do Módulo 43 (Case 03) — modelo de classificação binária que prevê o vencedor de uma partida ranqueada de League of Legends a partir do estado do jogo no minuto 10, desenvolvido para a Riot Games.
 
-**📊 Apresentação completa:** <https://CHANGE-ME.github.io/projeto-final-mod43/>
+**📊 Apresentação completa:** <https://dandanleinad.github.io/data-science-ebac-mod43/>
+**💻 Simulador interativo no Streamlit:** <https://lol-win-predictor.streamlit.app>
 
 ## O que tem neste repositório
 
@@ -19,7 +20,7 @@ Projeto final do Módulo 43 (Case 03) — modelo de classificação binária que
 
 **Regressão Logística** tunada via `GridSearchCV` (`C=0.01`, `penalty='l1'`, `solver='saga'`) — AUC-ROC de 0,8065 (teste) / 0,8117 (validação cruzada, 5-fold). Threshold operacional: 0,32 (otimizado para F1-Score).
 
-Detalhes completos, incluindo o achado mais interessante do projeto, estão na [apresentação](https://CHANGE-ME.github.io/projeto-final-mod43/04-resultados/).
+Detalhes completos, incluindo o achado mais interessante do projeto, estão na [apresentação](https://dandanleinad.github.io/data-science-ebac-mod43/04-resultados/).
 
 ## Rodando o simulador localmente
 
@@ -27,7 +28,7 @@ Requer [uv](https://docs.astral.sh/uv/).
 
 ```bash
 uv sync
-uv run python -m lol_match_winner_predictor.main
+uv run streamlit run src/lol_match_winner_predictor/streamlit_app.py
 ```
 
 ## Rodando a apresentação localmente
