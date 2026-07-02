@@ -268,9 +268,13 @@ st.caption(
 st.divider()
 st.markdown(
     """
-:small[**Projeto Final — Módulo 43 | Case 03 — Riot Games**  
-Desenvolvido para o desafio da Bárbara Martinelli (Tech Lead, Riot Games)  
+:small**Projeto Final — Módulo 43 | Case 03 — Riot Games**  
+Desenvolvido para o desafio da Bárbara Martinelli (Tech Lead, Riot Games)
+
 📓 Notebook completo: [lol_match_winner_prediction.ipynb](https://github.com/DandanLeinad/data-science-ebac-mod43/blob/main/lol_match_winner_prediction.ipynb)
+
 🐙 GitHub: [https://github.com/DandanLeinad/data-science-ebac-mod43](https://github.com/DandanLeinad/data-science-ebac-mod43)]
+
+🌐 Site: [https://dandanleinad.github.io/data-science-ebac-mod43/](https://dandanleinad.github.io/data-science-ebac-mod43/)
 """
 )
