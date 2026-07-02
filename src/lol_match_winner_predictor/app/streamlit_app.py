@@ -27,43 +27,157 @@ feature_names, feature_means, raw_stats = load_feature_reference()
 # ---------------------------------------------------------------------------
 st.title("🎮 LoL Win Predictor")
 st.caption(
-    "Simulador de partida ranqueada — projeto para a Riot Games "
-    "(Case 03 — Módulo 43)"
+    "Simulador de partida ranqueada de League of Legends — Projeto Final (Case 03 — Módulo 43)"
 )
 st.markdown(
     "Preencha o estado de uma partida por volta do **minuto 10** e veja "
     "a previsão do modelo para o vencedor."
 )
-st.divider()
+st.space("small")
 
 # ---------------------------------------------------------------------------
-# Inputs — 6 pares Blue vs Red (12 indicadores)
+# Inputs — 6 pares Blue vs Red (12 indicadores) + First Blood
 # ---------------------------------------------------------------------------
-col_blue, col_red = st.columns(2)
+col_blue, col_red = st.columns(2, gap="large")
 
 with col_blue:
-    st.markdown("### 🔵 Time Azul")
-    blue_gold = st.number_input("Ouro total", 5000, 30000, 16500, step=100, key="bg")
-    blue_xp = st.number_input(
-        "Experiência total", 5000, 25000, 17900, step=100, key="bx"
+    st.subheader(":material/sports_esports: Time Azul")
+    blue_gold = st.number_input(
+        "Ouro total",
+        5000,
+        30000,
+        16500,
+        step=100,
+        key="bg",
+        help="Ouro total acumulado pelo time até ~min 10",
     )
-    blue_kills = st.number_input("Abates (kills)", 0, 25, 6, step=1, key="bk")
-    blue_dragons = st.number_input("Dragões abatidos", 0, 4, 0, step=1, key="bd")
-    blue_heralds = st.number_input("Arautos abatidos", 0, 2, 0, step=1, key="bh")
-    blue_towers = st.number_input("Torres destruídas", 0, 5, 0, step=1, key="bt")
+    blue_xp = st.number_input(
+        "Experiência total",
+        5000,
+        25000,
+        17900,
+        step=100,
+        key="bx",
+        help="Experiência total acumulada pelo time até ~min 10",
+    )
+    blue_kills = st.number_input(
+        "Abates (kills)",
+        0,
+        25,
+        6,
+        step=1,
+        key="bk",
+        help="Total de campeões abatidos pelo time",
+    )
+    blue_dragons = st.number_input(
+        "Dragões abatidos",
+        0,
+        4,
+        0,
+        step=1,
+        key="bd",
+        help="Dragões capturados pelo time",
+    )
+    blue_heralds = st.number_input(
+        "Arautos abatidos",
+        0,
+        2,
+        0,
+        step=1,
+        key="bh",
+        help="Arautos (Heralds) capturados pelo time",
+    )
+    blue_towers = st.number_input(
+        "Torres destruídas",
+        0,
+        5,
+        0,
+        step=1,
+        key="bt",
+        help="Torres inimigas destruídas pelo time",
+    )
 
 with col_red:
-    st.markdown("### 🔴 Time Vermelho")
-    red_gold = st.number_input("Ouro total", 5000, 30000, 16500, step=100, key="rg")
-    red_xp = st.number_input(
-        "Experiência total", 5000, 25000, 17900, step=100, key="rx"
+    st.subheader(":material/sports_esports: Time Vermelho")
+    red_gold = st.number_input(
+        "Ouro total",
+        5000,
+        30000,
+        16500,
+        step=100,
+        key="rg",
+        help="Ouro total acumulado pelo time até ~min 10",
     )
-    red_kills = st.number_input("Abates (kills)", 0, 25, 6, step=1, key="rk")
-    red_dragons = st.number_input("Dragões abatidos", 0, 4, 0, step=1, key="rd")
-    red_heralds = st.number_input("Arautos abatidos", 0, 2, 0, step=1, key="rh")
-    red_towers = st.number_input("Torres destruídas", 0, 5, 0, step=1, key="rt")
+    red_xp = st.number_input(
+        "Experiência total",
+        5000,
+        25000,
+        17900,
+        step=100,
+        key="rx",
+        help="Experiência total acumulada pelo time até ~min 10",
+    )
+    red_kills = st.number_input(
+        "Abates (kills)",
+        0,
+        25,
+        6,
+        step=1,
+        key="rk",
+        help="Total de campeões abatidos pelo time",
+    )
+    red_dragons = st.number_input(
+        "Dragões abatidos",
+        0,
+        4,
+        0,
+        step=1,
+        key="rd",
+        help="Dragões capturados pelo time",
+    )
+    red_heralds = st.number_input(
+        "Arautos abatidos",
+        0,
+        2,
+        0,
+        step=1,
+        key="rh",
+        help="Arautos (Heralds) capturados pelo time",
+    )
+    red_towers = st.number_input(
+        "Torres destruídas",
+        0,
+        5,
+        0,
+        step=1,
+        key="rt",
+        help="Torres inimigas destruídas pelo time",
+    )
 
-st.divider()
+# First Blood (não altera previsão — modelo L1 zerou o peso, mas é feature do desafio)
+with st.container(horizontal=True):
+    blue_first_blood = st.checkbox(
+        "⚔️ First Blood para o Time Azul",
+        value=False,
+        help="Se o time azul obteve o primeiro abate da partida (feature do desafio; o modelo tunado não atribuiu peso a ela)",
+    )
+
+st.space("small")
+
+# ---------------------------------------------------------------------------
+# Feedback visual em tempo real: gold_dominance
+# ---------------------------------------------------------------------------
+gold_diff = blue_gold - red_gold
+total_gold = blue_gold + red_gold
+gold_dominance_live = gold_diff / total_gold if total_gold > 0 else 0.0
+
+st.markdown(
+    f"""
+**📊 Gold Dominance (calculado em tempo real):** `{gold_dominance_live:+.3f}`  
+*Vantagem de ouro normalizada pelo ouro total da partida — feature mais forte do modelo (peso +0.94)*
+"""
+)
+st.space("small")
 
 # ---------------------------------------------------------------------------
 # Previsão
@@ -88,7 +202,7 @@ proba_blue = predict_proba_blue(model, scaler, vector)
 proba_red = 1 - proba_blue
 vencedor = "🔵 Time Azul" if proba_blue >= THRESHOLD else "🔴 Time Vermelho"
 
-st.markdown("### 📊 Previsão")
+st.subheader(":material/bar_chart: Previsão")
 
 bar_html = f"""
 <div style="display:flex; width:100%; height:36px; border-radius:8px; overflow:hidden; font-weight:600; font-family:sans-serif;">
@@ -101,7 +215,7 @@ bar_html = f"""
 </div>
 """
 st.markdown(bar_html, unsafe_allow_html=True)
-st.markdown("")
+st.space("small")
 
 c1, c2 = st.columns(2)
 c1.metric("Prob. vitória — Time Azul", f"{proba_blue:.1%}")
@@ -145,8 +259,18 @@ influência real na decisão do modelo:
         "correlacionadas), então o L1 manteve só a mais forte."
     )
 
-st.divider()
+st.space("small")
 st.caption(
     "Modelo: Regressão Logística tunada (GridSearchCV) · "
     "Dados capturados por volta do minuto 10 de partidas ranqueadas."
+)
+
+st.divider()
+st.markdown(
+    """
+:small[**Projeto Final — Módulo 43 | Case 03 — Riot Games**  
+Desenvolvido para o desafio da Bárbara Martinelli (Tech Lead, Riot Games)  
+📓 Notebook completo: `lol_match_winner_prediction.ipynb`  
+🐙 GitHub: [github.com/seu-usuario/projeto-final-mod43](https://github.com/seu-usuario/projeto-final-mod43)]
+"""
 )

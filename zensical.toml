@@ -1,0 +1,68 @@
+[project]
+site_name = "LoL Win Predictor"
+site_description = "Modelo de classificação para prever o vencedor de partidas ranqueadas de League of Legends aos 10 minutos de jogo — Projeto Final, Módulo 43 (Case 03, Riot Games)."
+site_author = "DandanLeinad"
+site_url = "https://CHANGE-ME.github.io/projeto-final-mod43/"
+repo_url = "https://github.com/CHANGE-ME/projeto-final-mod43"
+repo_name = "GitHub"
+copyright = "Projeto Final — Módulo 43 (Case 03, Riot Games) — Daniel"
+
+docs_dir = "docs"
+site_dir = "site"
+
+nav = [
+  { "Início" = "index.md" },
+  { "O Desafio" = "01-contexto.md" },
+  { "Dados & Exploração" = "02-dados.md" },
+  { "Modelagem" = "03-modelagem.md" },
+  { "Modelo Final" = "04-resultados.md" },
+  { "Simulador" = "05-simulador.md" },
+]
+
+[project.theme]
+language = "pt-BR"
+
+[project.theme.icon]
+logo = "lucide/swords"
+repo = "octicons/mark-github-16"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "blue"
+accent = "amber"
+toggle.icon = "lucide/sun"
+toggle.name = "Mudar para modo escuro"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "blue"
+accent = "amber"
+toggle.icon = "lucide/moon"
+toggle.name = "Mudar para modo claro"
+
+[project.theme.font]
+text = "Inter"
+code = "JetBrains Mono"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.toc]
+permalink = true
+
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+[project.markdown_extensions.pymdownx.critic]
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.tilde]
